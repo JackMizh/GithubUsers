@@ -8,14 +8,7 @@ import javax.inject.Inject
 class SearchRepository @Inject constructor(
     private val githubApi: GithubApi
 ) {
-    suspend fun searchUser(keyword: String): Response<UserListResponse>
-    {
-        val response = githubApi.searchUser(keyword)
-        if(response.isSuccessful){
-
-        }else{
-
-        }
-        return response
+    suspend fun searchUser(keyword: String): Response<UserListResponse> {
+        return githubApi.searchUser(keyword)
     }
 }

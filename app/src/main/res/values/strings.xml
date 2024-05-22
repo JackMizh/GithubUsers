@@ -4,4 +4,5 @@
     <string name="type_here">Type here</string>
     <string name="favorite">Favorite</string>
     <string name="search_icon">Search Icon</string>
+    <string name="data_is_empty">Data is empty</string>
 </resources>

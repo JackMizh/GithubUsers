@@ -12,7 +12,7 @@ import com.githubusers.app.data.UserListItem
 )
 abstract class UsersDatabase: RoomDatabase() {
 
-    abstract fun gerUsersDao(): UsersDao
+    abstract fun getUsersDao(): UsersDao
 
     companion object {
         @Volatile
