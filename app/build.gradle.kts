@@ -68,5 +68,8 @@ dependencies {
 
     implementation(libs.androidx.activity.ktx)
 
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
 
+    implementation(libs.androidx.room.ktx)
 }
