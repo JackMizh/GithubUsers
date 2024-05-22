@@ -4,6 +4,7 @@ converter-moshi = "2.10.0"
 hilt-android = "2.51"
 kotlinx-coroutines-android = "1.7.3"
 kotlinx-coroutines-core = "1.7.3"
+lifecycle-viewmodel-ktx = "2.8.0"
 moshi = "1.15.1"
 org-jetbrains-kotlin-android = "1.9.0"
 core-ktx = "1.13.1"
@@ -16,6 +17,8 @@ constraintlayout = "2.1.4"
 retrofit = "2.10.0"
 
 [libraries]
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converter-moshi" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
