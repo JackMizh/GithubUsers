@@ -53,6 +53,11 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.android)
+    testImplementation(libs.androidx.core.testing)
 
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
