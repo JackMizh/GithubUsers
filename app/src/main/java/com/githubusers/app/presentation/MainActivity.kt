@@ -1,5 +1,6 @@
 package com.githubusers.app.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -49,9 +50,15 @@ class MainActivity : AppCompatActivity() {
                 searchAdapter.differ.submitList(it)
             }
         }
+
+        searchAdapter.setOnItemClickListener {
+            val i = Intent(this, DetailActivity::class.java)
+            i.putExtra("login", it.login)
+            startActivity(i)
+        }
     }
 
-    fun dataToggle(isEmpty: Boolean){
+    private fun dataToggle(isEmpty: Boolean){
         if(isEmpty){
             findViewById<TextView>(R.id.empty_tv).visibility = View.VISIBLE
             findViewById<RecyclerView>(R.id.users_list).visibility = View.GONE
