@@ -18,11 +18,29 @@ class SearchViewModel @Inject constructor(
     private val _searchUserLiveData = MutableLiveData<List<UserListItem>>()
     val getSearchUserLiveData: LiveData<List<UserListItem>> = _searchUserLiveData
 
+    private var searchPage = 1
+    private val itemPerPage = 30
+
     fun searchUser(keyword: String){
         viewModelScope.launch {
-            val response = searchRepository.searchUser(keyword)
+            val response = searchRepository.searchUser(keyword, searchPage)
             response.body()!!.items.let {
+                searchPage++
                 _searchUserLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun searchUserNextPage(keyword: String){
+        if(_searchUserLiveData.value!!.size >= itemPerPage){
+            viewModelScope.launch {
+                val response = searchRepository.searchUser(keyword, searchPage)
+                response.body()!!.items.let {
+                    if(it.size >= itemPerPage) {
+                        searchPage++
+                        _searchUserLiveData.value = _searchUserLiveData.value!! + it
+                    }
+                }
             }
         }
     }

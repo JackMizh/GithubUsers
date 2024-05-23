@@ -29,9 +29,26 @@ class MainActivity : AppCompatActivity() {
 
         searchViewModel.deleteLocalData()
 
+        val scrollListener = object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val visibleItemCount: Int = layoutManager.childCount
+                val totalItemCount: Int = layoutManager.itemCount
+                val firstVisibleItemPosition: Int = layoutManager.findFirstVisibleItemPosition()
+                if (visibleItemCount + firstVisibleItemPosition >= totalItemCount
+                    && firstVisibleItemPosition >= 0
+                ) {
+                    searchViewModel.searchUserNextPage(findViewById<EditText>(R.id.search_edt).text.toString())
+                }
+            }
+        }
+
         findViewById<RecyclerView>(R.id.users_list).apply {
             adapter = searchAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
+            addOnScrollListener(scrollListener)
         }
 
         findViewById<EditText>(R.id.search_edt).apply {

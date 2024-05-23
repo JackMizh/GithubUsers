@@ -14,6 +14,7 @@ interface GithubApi {
     @GET("search/users")
     suspend fun searchUser(
         @Query("q") keyword: String,
+        @Query("page") page: Int,
         @Header("Authorization") accessToken: String = Constants.personalAccessToken
     ): Response<UserListResponse>
 

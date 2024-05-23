@@ -10,8 +10,8 @@ class SearchRepository @Inject constructor(
     private val githubApi: GithubApi,
     private val usersDao: UsersDao
 ) {
-    suspend fun searchUser(keyword: String): Response<UserListResponse> {
-        return githubApi.searchUser(keyword)
+    suspend fun searchUser(keyword: String, page: Int): Response<UserListResponse> {
+        return githubApi.searchUser(keyword, page)
     }
 
     suspend fun deleteLocalData() = usersDao.deleteLocalData()
