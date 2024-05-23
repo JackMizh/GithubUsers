@@ -1,9 +1,13 @@
 package com.githubusers.app.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-
+@Entity(
+    tableName = "users"
+)
 @JsonClass(generateAdapter = true)
 data class UserResponse(
     @Json(name = "avatar_url")
@@ -16,6 +20,7 @@ data class UserResponse(
     val followers: Int,
     @Json(name = "following")
     val following: Int,
+    @PrimaryKey
     @Json(name = "id")
     val id: Int,
     @Json(name = "location")

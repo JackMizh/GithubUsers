@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        searchViewModel.deleteLocalData()
+
         findViewById<RecyclerView>(R.id.users_list).apply {
             adapter = searchAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         searchAdapter.setOnItemClickListener {
             val i = Intent(this, DetailActivity::class.java)
             i.putExtra("login", it.login)
+            i.putExtra("id", it.id)
             startActivity(i)
         }
     }

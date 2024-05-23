@@ -21,8 +21,9 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val login:String = intent.getStringExtra("login").toString()
+        val id:Int = intent.getIntExtra("id", 0)
 
-        detailViewModel.getUser(login)
+        detailViewModel.getUser(id, login)
 
         detailViewModel.getUserLiveData.observe(this){
             it.let {

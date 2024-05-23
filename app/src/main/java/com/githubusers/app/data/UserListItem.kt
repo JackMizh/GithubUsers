@@ -1,13 +1,8 @@
 package com.githubusers.app.data
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@Entity(
-    tableName = "users"
-)
 @JsonClass(generateAdapter = true)
 data class UserListItem(
     @Json(name = "avatar_url")
@@ -24,7 +19,6 @@ data class UserListItem(
     val gravatar_id: String,
     @Json(name = "html_url")
     val html_url: String,
-    @PrimaryKey
     @Json(name = "id")
     val id: Int,
     @Json(name = "login")

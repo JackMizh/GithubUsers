@@ -4,15 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.githubusers.app.data.UserListItem
+import com.githubusers.app.data.UserResponse
+
 
 @Database(
-    entities = [UserListItem::class],
+    entities = [UserResponse::class],
     version = 1
 )
 abstract class UsersDatabase: RoomDatabase() {
 
-    abstract fun getUsersDao(): UsersDao
+    abstract fun UsersDao(): UsersDao
 
     companion object {
         @Volatile

@@ -27,4 +27,10 @@ class SearchViewModel @Inject constructor(
         }
     }
 
+    fun deleteLocalData(){
+        viewModelScope.launch {
+            searchRepository.deleteLocalData()
+        }
+    }
+
 }
