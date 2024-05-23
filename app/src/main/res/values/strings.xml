@@ -5,4 +5,7 @@
     <string name="favorite">Favorite</string>
     <string name="search_icon">Search Icon</string>
     <string name="data_is_empty">Data is empty</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
 </resources>
