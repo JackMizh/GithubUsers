@@ -75,4 +75,7 @@ dependencies {
 
     implementation(libs.glide)
     kapt(libs.compiler)
+
+    debugImplementation(libs.library)
+    releaseImplementation(libs.library.no.op)
 }

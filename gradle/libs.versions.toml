@@ -6,6 +6,7 @@ glide = "4.13.2"
 hilt-android = "2.51"
 kotlinx-coroutines-android = "1.7.3"
 kotlinx-coroutines-core = "1.7.3"
+library = "4.0.0"
 lifecycle-viewmodel-ktx = "2.8.0"
 moshi = "1.15.1"
 org-jetbrains-kotlin-android = "1.9.0"
@@ -39,6 +40,8 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
+library = { module = "com.github.chuckerteam.chucker:library", version.ref = "library" }
+library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "library" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
