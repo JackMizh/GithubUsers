@@ -18,6 +18,6 @@ interface GithubApi {
     ): Response<UserListResponse>
 
     @GET("users/{username}")
-    fun getUser(@Path("username") username: String
+    suspend fun getUser(@Path("username") username: String
     ): Response<UserResponse>
 }

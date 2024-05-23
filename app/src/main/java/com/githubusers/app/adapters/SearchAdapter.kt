@@ -48,7 +48,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
             Glide.with(this).load(user.avatar_url).into(holder.itemView.findViewById(R.id.avatar))
             holder.itemView.findViewById<TextView>(R.id.name).text = user.login
             holder.itemView.findViewById<TextView>(R.id.url).text = user.html_url
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let { it(user) }
             }
         }

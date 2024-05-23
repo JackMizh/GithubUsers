@@ -9,9 +9,9 @@ data class UserResponse(
     @Json(name = "avatar_url")
     val avatar_url: String,
     @Json(name = "bio")
-    val bio: Any,
+    val bio: String?,
     @Json(name = "email")
-    val email: Any,
+    val email: String?,
     @Json(name = "followers")
     val followers: Int,
     @Json(name = "following")
@@ -19,11 +19,11 @@ data class UserResponse(
     @Json(name = "id")
     val id: Int,
     @Json(name = "location")
-    val location: String,
+    val location: String?,
     @Json(name = "login")
     val login: String,
     @Json(name = "name")
-    val name: String,
+    val name: String?,
     @Json(name = "public_repos")
     val public_repos: Int,
 )
